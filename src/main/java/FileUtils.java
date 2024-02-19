@@ -9,8 +9,8 @@ public class FileUtils {
         for (int i = 0; i < lines; i++) {
             String line = scanner.nextLine();
             String[] split = line.split(" ");
-            int firstNumber = Integer.parseInt(split[0]);
-            int secondNumber = Integer.parseInt(split[2]);
+            double firstNumber = Double.parseDouble(split[0]);
+            double secondNumber = Double.parseDouble(split[2]);
             Operators operator = setOperator(split[1]);
             double price = Double.parseDouble(split[2]);
             result[i] = new MathematicalOperation(firstNumber, secondNumber, operator);
