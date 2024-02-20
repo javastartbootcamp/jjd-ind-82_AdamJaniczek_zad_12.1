@@ -12,19 +12,18 @@ public class FileUtils {
             double firstNumber = Double.parseDouble(split[0]);
             double secondNumber = Double.parseDouble(split[2]);
             Operators operator = setOperator(split[1]);
-            double price = Double.parseDouble(split[2]);
             result[i] = new MathematicalOperation(firstNumber, secondNumber, operator);
         }
         return result;
     }
 
     static void save(MathematicalOperation[] mathematicalOperations, String fileName) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-        for (MathematicalOperation mathematicalOperation : mathematicalOperations) {
-            writer.write(mathematicalOperation.toString());
-            writer.newLine();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            for (MathematicalOperation mathematicalOperation : mathematicalOperations) {
+                writer.write(mathematicalOperation.toString());
+                writer.newLine();
+            }
         }
-        writer.close();
     }
 
     private static Operators setOperator(String operator) {

@@ -25,10 +25,6 @@ public class MathematicalOperation {
         return firstNumber;
     }
 
-    public void setFirstNumber(int firstNumber) {
-        this.firstNumber = firstNumber;
-    }
-
     public Operators getOperators() {
         return operators;
     }
