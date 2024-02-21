@@ -15,4 +15,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: 'github-pr-check'
           tool_name: 'Checkstyle'
+          version: '10.13.0'
           checkstyle_config: https://raw.githubusercontent.com/javastartpl/checkstyle/master/checkstyle.xml 
